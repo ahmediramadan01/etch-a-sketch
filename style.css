@@ -38,4 +38,14 @@ button {
     font-size: 6.4rem;
     text-align: center;
     padding: 2rem;
+    margin-bottom: 3.2rem;
+}
+
+.sketchpad {
+    width: 64rem;
+    height: 64rem;
+    margin: 0 auto;
+    background-color: white;
+    outline: 3.2rem solid red;
+    border-radius: 0.5rem;
 }
