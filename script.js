@@ -3,6 +3,7 @@
 const sketchpadElement = document.querySelector(".sketchpad");
 const sizeValueElement = document.querySelector("#size-value");
 const sizeSliderElement = document.querySelector("#size-slider");
+const resetBtnElement = document.querySelector(".btn--reset");
 
 const pixelElement = document.createElement("div");
 pixelElement.classList.add("pixel");
@@ -31,3 +32,5 @@ sketchpadElement.addEventListener("mouseover", function (event) {
     event.preventDefault();
     if (event.target.classList.contains("pixel")) event.target.style.backgroundColor = "black";
 });
+
+resetBtnElement.addEventListener("click", renderGrid);
