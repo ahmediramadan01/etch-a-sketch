@@ -42,10 +42,22 @@ button {
 }
 
 .sketchpad {
-    width: 64rem;
-    height: 64rem;
+    width: 50rem;
+    height: 50rem;
     margin: 0 auto;
     background-color: white;
     outline: 3.2rem solid red;
     border-radius: 0.5rem;
+    display: grid;
+    margin-bottom: 6.4rem;
+}
+
+.size-container {
+    text-align: center;
+}
+
+#size-value {
+    color: white;
+    font-size: 4rem;
+    display: block;
 }
