@@ -9,7 +9,7 @@ const sizeSliderElement = document.querySelector("#size-slider");
 
 const actionBtnsContainerElement = document.querySelector(".btns--actions");
 const actionBtnsElements = document.querySelectorAll(".btn--action");
-const resetBtnElement = document.querySelector(".btn--reset");
+const clearBtnElement = document.querySelector(".btn--clear");
 
 const pixelElement = document.createElement("div");
 pixelElement.classList.add("pixel");
@@ -58,6 +58,6 @@ sketchpadElement.addEventListener("mouseover", renderColor);
 
 sizeSliderElement.addEventListener("change", renderGrid);
 
-resetBtnElement.addEventListener("click", renderGrid);
+clearBtnElement.addEventListener("click", renderGrid);
 
 actionBtnsContainerElement.addEventListener("click", setColor);
