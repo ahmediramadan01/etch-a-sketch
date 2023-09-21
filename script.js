@@ -7,7 +7,6 @@ const resetBtnElement = document.querySelector(".btn--reset");
 
 const pixelElement = document.createElement("div");
 pixelElement.classList.add("pixel");
-pixelElement.style["border"] = "0.01px solid black";
 
 const renderGrid = function () {
     sketchpadElement.innerHTML = "";
