@@ -64,10 +64,12 @@ button {
     display: block;
 }
 
-.btns {
+.btns,
+.btns--actions {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10rem;
 }
 
 .btn {
@@ -80,4 +82,11 @@ button {
 
 .btn:active {
     transform: translateY(0.5rem);
+}
+
+.btn--active {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    /* transform: translateY(0.5rem); */
 }
