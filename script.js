@@ -1,20 +1,22 @@
 "user strict";
 
-// HTML Elements
+// DOM ELEMENTS //
 
 const sketchpadElement = document.querySelector(".sketchpad");
-
 const sizeValueElement = document.querySelector("#size-value");
 const sizeSliderElement = document.querySelector("#size-slider");
-
-const actionBtnsContainerElement = document.querySelector(".btns--actions");
-const actionBtnsElements = document.querySelectorAll(".btn--action");
-const clearBtnElement = document.querySelector(".btn--clear");
+const actionButtonsContainerElement = document.querySelector(".buttons--actions");
+const actionButtonsElements = document.querySelectorAll(".button--action");
+const clearButtonElement = document.querySelector(".button--clear");
 
 const pixelElement = document.createElement("div");
 pixelElement.classList.add("pixel");
 
-// Helper and Callback Functions
+// GLOBAL VARIABLES //
+
+let COLOR = "black";
+
+// HELPER FUNCTIONS //
 
 const renderGrid = function () {
     sketchpadElement.innerHTML = "";
@@ -32,32 +34,31 @@ const renderGrid = function () {
 renderGrid();
 
 const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
 const randomColor = () => `rgb(${randomInteger(0, 255)}, ${randomInteger(0, 255)}, ${randomInteger(0, 255)})`;
 
-let color = "black";
+// CALLBACK FUNCTIONS //
+
 const setColor = function (event) {
-    const clickedBtn = event.target.closest(".btn--action");
-    if (!clickedBtn) return;
+    const clickedButton = event.target.closest(".button--action");
+    if (!clickedButton) return;
 
-    actionBtnsElements.forEach((actionBtn) => actionBtn.classList.remove("btn--active"));
-    clickedBtn.classList.add("btn--active");
+    actionButtonsElements.forEach((actionButton) => actionButton.classList.remove("button--active"));
+    clickedButton.classList.add("button--active");
 
-    color = clickedBtn.dataset.color;
+    COLOR = clickedButton.dataset.color;
 };
 
 const renderColor = function (event) {
     event.preventDefault();
 
-    if (event.target.classList.contains("pixel") && color !== "rainbow") event.target.style.backgroundColor = color;
+    if (event.target.classList.contains("pixel") && COLOR !== "rainbow") event.target.style.backgroundColor = COLOR;
     else event.target.style.backgroundColor = randomColor();
 };
 
-// Event Listeners
+// EVENT LISTENERS //
 
 sketchpadElement.addEventListener("mouseover", renderColor);
-
 sizeSliderElement.addEventListener("change", renderGrid);
-
-clearBtnElement.addEventListener("click", renderGrid);
-
-actionBtnsContainerElement.addEventListener("click", setColor);
+clearButtonElement.addEventListener("click", renderGrid);
+actionButtonsContainerElement.addEventListener("click", setColor);
