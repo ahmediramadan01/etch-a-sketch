@@ -1,5 +1,9 @@
 "user strict";
 
+// GLOBAL VARIABLES //
+
+let COLOR = "black";
+
 // DOM ELEMENTS //
 
 const sketchpadElement = document.querySelector(".sketchpad");
@@ -11,10 +15,6 @@ const clearButtonElement = document.querySelector(".button--clear");
 
 const pixelElement = document.createElement("div");
 pixelElement.classList.add("pixel");
-
-// GLOBAL VARIABLES //
-
-let COLOR = "black";
 
 // HELPER FUNCTIONS //
 
