@@ -6,7 +6,7 @@
 
 #### Features:
 
--   Toggle between black color mode, rainbow mode, or eraser mode
--   Clear button to clear screen
+- Toggle between black color mode, rainbow mode, or eraser mode
+- Clear button to clear screen
 
 ![Etch A Sketch's Desktop Screenshot](./images/etch-a-sketch-desktop.png?raw=true "Etch A Sketch (Desktop)")
