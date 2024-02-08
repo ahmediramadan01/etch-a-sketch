@@ -19,17 +19,17 @@ pixelElement.classList.add("pixel");
 // HELPER FUNCTIONS //
 
 const renderGrid = function () {
-  sketchpadElement.innerHTML = "";
-  const gridSize = sizeSliderElement.value;
+    sketchpadElement.innerHTML = "";
+    const gridSize = sizeSliderElement.value;
 
-  sizeValueElement.textContent = `${gridSize} x ${gridSize}`;
+    sizeValueElement.textContent = `${gridSize} x ${gridSize}`;
 
-  sketchpadElement.style["grid-template-columns"] = `repeat(${gridSize}, 1fr)`;
-  sketchpadElement.style["grid-template-rows"] = `repeat(${gridSize}, 1fr)`;
+    sketchpadElement.style["grid-template-columns"] = `repeat(${gridSize}, 1fr)`;
+    sketchpadElement.style["grid-template-rows"] = `repeat(${gridSize}, 1fr)`;
 
-  for (let i = 0; i < gridSize ** 2; i++) {
-    sketchpadElement.insertAdjacentHTML("beforeend", pixelElement.outerHTML);
-  }
+    for (let i = 0; i < gridSize ** 2; i++) {
+        sketchpadElement.insertAdjacentHTML("beforeend", pixelElement.outerHTML);
+    }
 };
 renderGrid();
 
@@ -40,20 +40,20 @@ const randomColor = () => `rgb(${randomInteger(0, 255)}, ${randomInteger(0, 255)
 // CALLBACK FUNCTIONS //
 
 const setColor = function (event) {
-  const clickedButton = event.target.closest(".button--action");
-  if (!clickedButton) return;
+    const clickedButton = event.target.closest(".button--action");
+    if (!clickedButton) return;
 
-  actionButtonsElements.forEach((actionButton) => actionButton.classList.remove("button--active"));
-  clickedButton.classList.add("button--active");
+    actionButtonsElements.forEach((actionButton) => actionButton.classList.remove("button--active"));
+    clickedButton.classList.add("button--active");
 
-  COLOR = clickedButton.dataset.color;
+    COLOR = clickedButton.dataset.color;
 };
 
 const renderColor = function (event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  if (event.target.classList.contains("pixel") && COLOR !== "rainbow") event.target.style.backgroundColor = COLOR;
-  else event.target.style.backgroundColor = randomColor();
+    if (event.target.classList.contains("pixel") && COLOR !== "rainbow") event.target.style.backgroundColor = COLOR;
+    else event.target.style.backgroundColor = randomColor();
 };
 
 // EVENT LISTENERS //
